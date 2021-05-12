@@ -32,10 +32,8 @@ class AngajatIT {
      
     }
     afiseazaAnulAngajarii(){
-        console.log('Neimplementat');
-        const currentYear = (new Date().getFullYear());
-        const yearEmployee = this.vechime;
-        const employeeSeniority = currentYear - yearEmployee;
+
+        const employeeSeniority = new Date().getFullYear() - this.vechime;;
 
         console.log(`The person was hired in: ${employeeSeniority}`);
     }
