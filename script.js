@@ -20,21 +20,15 @@ class AngajatIT {
 
         if(monthFromCNP >  currentMonth){
             currentAge--;
-        }else if(monthFromCNP < currentMonth){
-            currentAge;
         }else if(monthFromCNP === currentMonth){
-            if(currentDay > dayFromCNP){
-                currentAge;
-            }else if(currentDay < dayFromCNP){
+             if(currentDay < dayFromCNP){
                 currentAge--;
             }
         }
-     
+        console.log(currentAge);
     }
     afiseazaAnulAngajarii(){
-
         const employeeSeniority = new Date().getFullYear() - this.vechime;;
-
         console.log(`The person was hired in: ${employeeSeniority}`);
     }
     lucreaza(){
@@ -43,7 +37,7 @@ class AngajatIT {
 }
 class QA extends AngajatIT{
     constructor(CNP, nume, prenume, vechime){
-        super(CNP, nume, prenume, vechime);
+        super(CNP, nume, prenume, vechime, 'QA Departament');
     }
     lucreaza(){
         console.log('Testeaza software');
@@ -51,23 +45,15 @@ class QA extends AngajatIT{
 }
 class Developer extends AngajatIT{
     constructor(CNP, nume, prenume, vechime){
-        super(CNP, nume, prenume, vechime);
+        super(CNP, nume, prenume, vechime, 'Developer');
     }
     lucreaza(){
         console.log('Scrie cod');
     }
 }
-const firstAngajat = new AngajatIT('2980528051159', 'Popa', 'Adela', 2, 'web');
+const firstAngajat = new AngajatIT('2980513051159', 'Popa', 'Adela', 2, 'web');
 firstAngajat.afiseazaVarsta();
 firstAngajat.afiseazaAnulAngajarii();
-console.log(firstAngajat);
-const qa1 = new QA('QA1');
-qa1.lucreaza();
-const dev1 = new Developer('Developer1');
-dev1.lucreaza();
-
-console.log(dev1.CNP);
-console.log(dev1.nume);
 
 
 //Ex 2
