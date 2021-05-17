@@ -1,0 +1,178 @@
+/* Creați un progress bar folosind animatii CSS, acesta trebuie să se încarce de la 0 la 100. */
+.container-progress-bars{
+    height: 100%;
+    margin: 0 auto;
+    width: 50%;
+    background-color: red;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: changeBackground 5s infinite;
+}
+.first-progress-bar, .second-progress-bar{
+    margin: 5px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: white;
+    position: relative;
+}
+.first-progress-bar::after{
+    content: '';
+    width: 0px;
+    height: 30px;
+    animation: load 5s infinite;
+    position: absolute;
+    border-radius: 30px;
+    width: 100%;
+}
+.second-progress-bar:after{
+    content: '';
+    height: 30px;
+    position: absolute;
+    border-radius: 30px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(238, 127, 127), rgb(255, 255, 102));
+    animation: infiniteBackground 2s linear infinite;
+}
+.section-intro{
+  text-align: center;
+}
+.title-progress-bar, .name-author{
+  font-family: 'Apple Chancery';
+  font-size: 26px;
+  margin: 0px;
+}
+.title-progress-bar{
+  animation: fadeIn 2s infinite;
+  animation-direction: alternate;
+}
+.name-author{
+  color: rgb(97, 13, 27);
+  font-family: 'Apple Chancery';
+  font-size: 30px;
+  content: 'Adela Popa';
+  width: 100%;
+  text-transform: uppercase;
+  animation: moveIn 3s infinite;
+  animation-direction: alternate;
+}
+.stopwatch, .title-stopwatch{
+  font-family: 'Monaco';
+  font-size: 30px;
+}
+.title-stopwatch{
+  margin: 20px 0px 0px 0px;
+  color: purple;
+  font-weight: bold;
+}
+.container-stop-watch{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.start-stopwatch, .reset-stopwatch{
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid black;
+}
+.start-stopwatch:hover, .reset-stopwatch:hover{
+  background-color: lightpink;
+}
+  @keyframes load {
+    0% {
+      width: 0%;
+      background: #c56780;
+    }
+    
+    25% {
+      width: 25%;
+      background: #98d0ec;
+    }
+    
+    50% {
+      width: 50%;
+      background: #af253c;
+    }
+    
+    75% {
+      width: 75%;
+      background: #9064e2;
+    }
+    
+    100% {
+      width: 100%;
+      background: #5e6daf;
+    }
+  }
+  @keyframes changeBackground {
+      0% {
+        background: #746c6e;
+      }
+      25%{
+        background: #a6b1b6;
+      }
+      50%{
+        background: #caa6ac;
+      }
+      75%{
+        background: #bdb3cf;
+      }
+      100%{
+        background: #9fa5c0;
+      }
+  }
+  @keyframes infiniteBackground{
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 50%;
+    }
+  100%{
+    background-position: 0;
+  }
+  }
+  @keyframes fadeIn{
+    100%{
+      opacity: 0.4;
+      color: rgb(80, 224, 67);
+      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; 
+      /* transition: 0.3s; */
+    }
+  }
+  @keyframes colorText{
+  0%{
+    width: 0%;
+    color: yellow;
+  }
+  25%{
+    width: 25%;
+    color: red;
+  }
+  50%{
+    width: 50%;
+    color: green;
+  }
+  75%{
+    width: 75%;
+    color: pink;
+  }
+  100%{
+    width: 100%;
+    color: blue;
+  }
+  }
+  @keyframes moveIn {
+    0%{ 
+    opacity: 0; 
+    filter: blur(10px);
+    }
+    100% { 
+    opacity: 1; 
+    filter: blur(0px);
+    }
+  }
