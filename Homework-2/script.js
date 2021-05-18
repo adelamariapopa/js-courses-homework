@@ -9,7 +9,6 @@ function startWatch() {
   timer = setInterval( ()=> {
     millisecond += 10;
     let date;
-    let milliseconds = date.setMilliseconds
     let milliseconds = String(date.getMilliseconds()).split(0,1);
     let seconds = String(date.getSeconds()).padStart(2, "0");
     let minutes = String(date.getMinutes()).padStart(2, "0");
