@@ -25,6 +25,7 @@ function startWatch() {
 function resetWatch() {
   clearInterval(timer);
   millisecond = 0;
+  startButton.textContent = 'play';
   stopWatch.innerHTML = '00 : 00 : 00';
 }
 startButton.addEventListener('click', startWatch);
