@@ -60,7 +60,7 @@
   animation: moveIn 3s infinite;
   animation-direction: alternate;
 }
-.stopwatch, .title-stopwatch{
+#stopwatch, .title-stopwatch{
   font-family: 'Monaco';
   font-size: 30px;
 }
@@ -74,12 +74,12 @@
   flex-direction: column;
   align-items: center;
 }
-.start-stopwatch, .reset-stopwatch{
+#start-stopwatch, #reset-stopwatch{
   font-size: 20px;
   background-color: transparent;
   border: 1px solid black;
 }
-.start-stopwatch:hover, .reset-stopwatch:hover{
+#start-stopwatch:hover, #reset-stopwatch:hover{
   background-color: lightpink;
 }
   @keyframes load {
