@@ -6,16 +6,20 @@ let timer;
 let millisecond = 0;
 function startWatch() {
   clearInterval(timer);
-  timer = setInterval( ()=> {
-    millisecond += 10;
-    let date;
-    let milliseconds = String(date.getMilliseconds()).split(0,1);
-    let seconds = String(date.getSeconds()).padStart(2, "0");
-    let minutes = String(date.getMinutes()).padStart(2, "0");
-    stopWatch.innerHTML = `${minutes} : ${seconds} : ${milliseconds}`;
+  timer = setInterval(()=> {
+    if (stopWatch.innerHTML !== '59 : 59 : 59') {
+      millisecond += 10;
+      let date = new Date(millisecond);
+      let milliseconds = String(date.getMilliseconds()).split(0,1);
+      let seconds = String(date.getSeconds()).padStart(2, "0");
+      let minutes = String(date.getMinutes()).padStart(2, "0");
+      stopWatch.innerHTML = `${minutes} : ${seconds} : ${milliseconds}`;
+    } else {
+        resetWatch();
+    }
   }, 10);
   startButton.classList.toggle('pause-btn');
-  if(startButton.classList.contains('pause-btn')) {
+  if (startButton.classList.contains('pause-btn')) {
     startButton.textContent = 'stop';
   } else {
     startButton.textContent = 'play';

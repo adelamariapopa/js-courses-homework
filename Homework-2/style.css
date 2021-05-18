@@ -46,7 +46,7 @@
   font-size: 1.625rem;
   margin: 0px;
 }
-.title-progress-bar{
+.title-progress-bar {
   animation: fadeIn 2s infinite;
   animation-direction: alternate;
 }
