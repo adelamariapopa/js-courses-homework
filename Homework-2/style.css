@@ -11,7 +11,8 @@
   flex-direction: column;
   animation: changeBackground 5s infinite;
 }
-.first-progress-bar, .second-progress-bar {
+.first-progress-bar, 
+.second-progress-bar {
   margin: 5px;
   width: 300px;
   height: 30px;
@@ -73,13 +74,15 @@
   flex-direction: column;
   align-items: center;
 }
-#start-stopwatch, #reset-stopwatch {
+#start-stopwatch, 
+#reset-stopwatch {
   font-size: 1.25rem;
   background-color: transparent;
   border: 1px solid black;
   text-transform: uppercase;
 }
-#start-stopwatch:hover, #reset-stopwatch:hover {
+#start-stopwatch:hover, 
+#reset-stopwatch:hover {
   background-color: lightpink;
 }
 @keyframes load {
