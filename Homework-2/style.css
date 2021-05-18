@@ -41,9 +41,9 @@
 .section-intro {
   text-align: center;
 }
-.title-progress-bar, .name-author {
-  font-family: 'Apple Chancery';
-  font-size: 26px;
+.title-progress-bar {
+  font-family: 'Apple Chancery', cursive;
+  font-size: 1.625rem;
   margin: 0px;
 }
 .title-progress-bar{
@@ -52,9 +52,8 @@
 }
 .name-author {
   color: rgb(97, 13, 27);
-  font-family: 'Apple Chancery';
-  font-size: 30px;
-  content: 'Adela Popa';
+  font-family: 'Apple Chancery', cursive;
+  font-size: 1.875rem;
   width: 100%;
   text-transform: uppercase;
   animation: moveIn 3s infinite;
@@ -62,7 +61,7 @@
 }
 #stopwatch, .title-stopwatch {
   font-family: 'Monaco';
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 .title-stopwatch {
   margin: 20px 0px 0px 0px;
@@ -75,7 +74,7 @@
   align-items: center;
 }
 #start-stopwatch, #reset-stopwatch {
-  font-size: 20px;
+  font-size: 1.25rem;
   background-color: transparent;
   border: 1px solid black;
   text-transform: uppercase;
