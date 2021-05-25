@@ -3,33 +3,35 @@ const stopWatch = document.querySelector('#stopwatch');
 const startButton = document.querySelector('#start-stopwatch');
 const resetButton = document.querySelector('#reset-stopwatch');
 let timer;
-let millisecond = 0;
+let minutes = 0, seconds = 0, miliseconds = 0;
 function startWatch() {
   clearInterval(timer);
   timer = setInterval(()=> {
-    if (stopWatch.innerHTML !== '59 : 59 : 59') {
-      millisecond += 10;
-      let date = new Date(millisecond);
-      let milliseconds = String(date.getMilliseconds()).split(0,1);
-      let seconds = String(date.getSeconds()).padStart(2, "0");
-      let minutes = String(date.getMinutes()).padStart(2, "0");
-      stopWatch.innerHTML = `${minutes} : ${seconds} : ${milliseconds}`;
-    } else {
-        resetWatch();
+    stopWatch.innerHTML = `${minutes < 10 ? '0' + minutes : minutes} : ${ seconds < 10 ? '0' + seconds : seconds} : ${ miliseconds < 10 ? '0' + miliseconds : miliseconds}`;
+    miliseconds++;
+    if(miliseconds === 100) {
+      miliseconds = 0;
+      seconds++;
+    }
+    if(seconds === 60) {
+      seconds = 0;
+      minutes++;
     }
   }, 10);
   startButton.classList.toggle('pause-btn');
   if (startButton.classList.contains('pause-btn')) {
     startButton.textContent = 'stop';
   } else {
-    startButton.textContent = 'play';
     clearInterval(timer);
+    startButton.textContent = 'play';
   }
 }
 function resetWatch() {
   clearInterval(timer);
-  millisecond = 0;
+  miliseconds = 0;
+  startButton.classList.remove('pause-btn');
   startButton.textContent = 'play';
+  minutes = seconds = miliseconds = 0;
   stopWatch.innerHTML = '00 : 00 : 00';
 }
 startButton.addEventListener('click', startWatch);
