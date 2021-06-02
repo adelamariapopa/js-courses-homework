@@ -84,6 +84,9 @@
 #gesture-4 {
     border-color: darkviolet;
 }
+#gesture-5 {
+    border-color: darkgray;
+}
 .gesture-classifier-btn.training{
     border: 1px solid;
 }
@@ -94,13 +97,22 @@
     width: 20px;
 }
 .gesture-0 {
-    background-color: red;
+    background-color: red !important;
 }
 .gesture-1 {
-    background-color: green;
+    background-color: green !important;
 }
 .gesture-2 {
-    background-color: blue;
+    background-color: blue !important;
+}
+.gesture-3 {
+    background-color: darkorange !important;
+}
+.gesture-4 {
+    background-color: darkviolet !important;
+}
+.gesture-5 {
+    background-color: darkgray !important;
 }
 .count-fingers {
     width: 100px;

@@ -15,7 +15,7 @@ export default class LeftHand {
     }
     writeBpmInfo(ctx) {
         if(!this.indexFinger) return;
-        const {x, y} = this.indexFinger;x
+        const {x, y} = this.indexFinger;
         ctx.save();
         ctx.fillStyle = 'lightblue';
         ctx.font = '15px Arial';

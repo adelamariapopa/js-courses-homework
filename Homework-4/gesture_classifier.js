@@ -41,9 +41,12 @@ export default class GestureClassifier {
             if(!btn.classList.contains('predicted')){
                 btn.classList.add('predicted');
                 grid.addGestureCell(label);
+                grid.changeBackground(label);
             }
             setTimeout(() => btn.classList.remove('predicted'), 500);
         }
+
+        console.log(label, confidences[label]);
         img.dispose();
     }
     startTraining(btn) {
@@ -66,6 +69,7 @@ export default class GestureClassifier {
 
     addHtmlButtons() {
         this.gestureIds.forEach((gestureId) => {
+            console.log(gestureId);
             const btn = document.createElement('div');
             btn.classList.add('gesture-classifier-btn');
             btn.id = `gesture-${gestureId}`;
@@ -74,6 +78,8 @@ export default class GestureClassifier {
 
             btn.addEventListener('click', () =>{
                 this.toggleTraining(btn);
+                const square = document.getElementsByClassName('square');
+                square[0].className = 'square';
             })
             document.body.append(btn);
         })
