@@ -65,8 +65,6 @@ export class Grid {
         gestureCell.classList.add(this.cellClass);
         gestureCell.classList.add('gesture-cell');
         gestureCell.classList.add(className);
-        console.log(this.cellClass);
-        console.log(className);
         gestureCell.addEventListener('click', () => {
             gestureCell.remove();
         });
@@ -74,7 +72,6 @@ export class Grid {
     }
     changeBackground(className) {
         const square = document.getElementsByClassName('square');
-        console.log(square[0]);
         square[0].classList.add(this.cellClass);
         square[0].classList.add('gesture-cell');
         square[0].classList.add(className);

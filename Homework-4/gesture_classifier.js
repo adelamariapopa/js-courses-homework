@@ -45,8 +45,6 @@ export default class GestureClassifier {
             }
             setTimeout(() => btn.classList.remove('predicted'), 500);
         }
-
-        console.log(label, confidences[label]);
         img.dispose();
     }
     startTraining(btn) {
@@ -69,7 +67,6 @@ export default class GestureClassifier {
 
     addHtmlButtons() {
         this.gestureIds.forEach((gestureId) => {
-            console.log(gestureId);
             const btn = document.createElement('div');
             btn.classList.add('gesture-classifier-btn');
             btn.id = `gesture-${gestureId}`;
