@@ -19,6 +19,24 @@ export default class RightHand {
     updateLandmarks(landmarks) {
         this.landmarks = landmarks;
     }
+
+    showRaisedFingers() {
+        let raisedFingers = 0;
+        const landmarks = this.landmarks;
+        if (landmarks) {
+            for (let i=2; i<=5; i++) {
+                const fingerTip = landmarks[4 * i];
+                const fingerDIP = landmarks[4 * i - 1];
+                if(fingerTip.y < fingerDIP.y) {
+                    raisedFingers++;
+                }
+            }
+            if(landmarks[4].x > landmarks[3].x) {
+                raisedFingers++;
+            }
+        }
+        document.querySelector('.count-fingers').innerText = `Number of raised fingers: ${raisedFingers}`;
+    }
     draw(ctx){
         this.indexFingerTip = this.landmarks && this.landmarks[8];
         if(this.indexFingerTip) {
