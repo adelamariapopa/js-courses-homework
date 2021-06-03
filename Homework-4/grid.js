@@ -71,9 +71,8 @@ export class Grid {
         row.append(gestureCell);
     }
     changeBackground(className) {
-        const square = document.getElementsByClassName('square');
-        square[0].classList.add(this.cellClass);
-        square[0].classList.add('gesture-cell');
+        let square = document.getElementsByClassName('square');
+        square.classList = '';
         square[0].classList.add(className);
     }
 }

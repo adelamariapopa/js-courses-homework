@@ -6,12 +6,12 @@ export default class LeftHand {
         this.landmarks = landmarks;
         this.indexFinger = landmarks && landmarks[8];
         this.thumbFinger = landmarks && landmarks[4];
-        this.updateBpm();
+        // this.updateBpm();
     }
     draw(ctx){
         drawLandmarks(ctx, this.landmarks,
             {color: 'lightblue', lineWidth: 1});
-            this.writeBpmInfo(ctx);
+            // this.writeBpmInfo(ctx);
     }
     writeBpmInfo(ctx) {
         if(!this.indexFinger) return;
